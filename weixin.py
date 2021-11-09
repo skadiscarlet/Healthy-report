@@ -1,6 +1,6 @@
 import requests
 import re
-from main import recognize
+from my_get import recognize
 from lxml import etree
 
 def health_report():

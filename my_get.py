@@ -1,12 +1,16 @@
 import cv2 as cv
 import os
 import numpy as np
+
+
 def segment(img):
     num1=img[:,26:46,:]
     num2=img[:,47:67,:]
     num3=img[:,68:88,:]
     num4=img[:,88:108,:]
     return num1,num2,num3,num4
+
+
 def preprocess(img):
     img=img.astype(np.float32)
     img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -18,11 +22,14 @@ def preprocess(img):
             else:
                 img[i][j] = 1
     return img
+
+
 def compare(img,i,j):
     num=cv.imread('./num'+str(i)+'/'+str(j)+'.png')
     num=preprocess(num)
     sub=abs(img-num)
     return sum(sum(sub))
+
 
 def detect(img,i):
     img=preprocess(img)
@@ -39,7 +46,9 @@ def detect(img,i):
                 ret=j
                 min=compare(img,i,j)
     return ret
-def recognize(img):#输入验证码图片120×32，输出4位验证码
+
+
+def recognize(img):
     img=cv.imread(img)
     validatecode=segment(img)
     ret=0
@@ -48,6 +57,7 @@ def recognize(img):#输入验证码图片120×32，输出4位验证码
     num3=detect(validatecode[2],3)
     num4=detect(validatecode[3],4)
     return str(num1)+str(num2)+str(num3)+str(num4)
+    
     
 if __name__ == '__main__':
     # test
