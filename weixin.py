@@ -84,6 +84,9 @@ def health_report():
     _data = {
         "_token": _token,
         "now_address": "1",
+        "juzhudi": "西校区",
+        "dorm": "623",
+        "dorm_building": "1",
         "gps_now_address": "",
         "now_province": "340000",
         "gps_province": "",
