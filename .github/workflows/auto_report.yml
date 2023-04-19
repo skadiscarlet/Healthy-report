@@ -8,10 +8,6 @@
 
 name: auto health report for ustc
 
-on:
-  schedule:
-  - cron: "0 2 * * *"
-
 jobs:
   autoreport:
     name: auto health report for ustc
