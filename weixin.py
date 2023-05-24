@@ -31,8 +31,8 @@ def health_report():
         "service": "https://weixine.ustc.edu.cn/2020/caslogin",
         "warn": "",
         "showCode": "1",
-        "username": "PB19020658",
-        "password": "1375446341",
+        "username": "xxxxxxxx",
+        "password": "xxxxxxxx",
         "LT": cop,
         "button": ""
     }
